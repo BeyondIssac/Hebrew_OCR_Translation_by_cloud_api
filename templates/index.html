@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="OCR" content="OCR">
+    <title>Hebrew-OCR</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+
+            <h3 class="mt-4">Upload Files</h3>
+            <hr>
+            
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="file" class="form-control mb-4" id="imageInput" accept=".jpg, .jpeg, .png, .pdf">
+                <div id="fileError" class="mb-2" style="color: red;"></div>
+              </div>
+              <div class="col-sm-3">
+                <select class="form-select form-select-md">
+                  <option>Document Type</option>
+                  <option>A Birth Certificate</option>
+                  <option>Marriage Certificate</option>
+                  <option>Divorce Certificate</option>
+                  <option>Name Change</option>
+                  <option>Certifiates</option>
+                  <option>A High School Diploma</option>
+                  <option>PassPort</option>
+                  <option>Isareli ID</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <select class="form-select form-select-md" id="language_list">
+                  <option value="">Language</option>
+                  <option value="">Hebrew</option>
+                  <option value="heb" >English</option>
+                </select>
+              </div>
+            </div>   
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-text mt-4">Last Name</span>
+              <input id="lst_name" class="form-control mt-4" type="text">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-text mt-2">Father's First Name</span>
+              <input id="fa_fst_name" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Mather's First Name</span>
+              <input id="ma_fst_name" class="form-control mt-2 " type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Sex</span>
+              <input id="sex" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Nationality</span>
+              <input id="nationality" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Date of change of nationality</span>
+              <input id="date_nationality" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Marital status</span>
+              <input id="marital" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">State of birth</span>
+              <input id="stateBirth" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Hebrew date of birth</span>
+              <input id="hebrew_birthday" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Date of entrance to Israel</span>
+              <input id="date_entrance" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Registration date</span>
+              <input id="registration_date" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Address</span>
+              <input id="address" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Date of entry to the address</span>
+              <input id="date_entry" class="form-control mt-2" type="text">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-text mt-4">First Name</span>
+              <input id="fst_name" class="form-control mt-4" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Father's Father First Name</span>
+              <input id="grandfa_fst_name" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">ID number</span>
+              <input id="id_number" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Religion</span>
+              <input id="religion" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Date of change of Religion</span>
+              <input id="date_religion" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Date of change of Marital status</span>
+              <input id="date_marital" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">City of birth</span>
+              <input id="city_birth" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Gregorian date of birth</span>
+              <input id="gregorian_birth" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Status</span>
+              <input id="status" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">Notes</span>
+              <input id="notes" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">AuthorityIn</span>
+              <input id="authorityIn" class="form-control mt-2" type="text">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text mt-2">IssuedOn</span>
+              <input id="issuedOn" class="form-control mt-2" type="text">
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <!-- <div class="col-sm-4">
+            <h3 class="mt-4">Translate</h3>
+            <hr>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+              <button id="translate_btn">Translate the image</button>
+            </div>
+          </div> -->
+            <div class="col-sm-6">
+                <h3 class="mt-4">Download Files</h3>
+                <hr>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                  <a id="pdfDwnLd"><img class="down_img img-thumbnail" src="{{ url_for('static', filename='PDF_file.png') }}"></a>
+                  <a id="wrdDwnLd"><img class="down_img img-thumbnail" src="{{ url_for('static', filename='WORD_file.png') }}"></a>
+                </div>
+            </div>
+            
+            <div class="col-sm-6">
+              <h3 class="mt-4">Send to Email</h3>
+              <hr>
+              <div class="row">
+
+                <div class="col-8">
+                  <input id="recipient_address" class="form-control mt-2" type="email" placeholder="example@mail.com">
+                </div>
+                <div class="col-4">
+                  <button class="form-control btn btn-primary mt-2" id="mailsend">Send</button>
+                </div>
+                
+                
+                
+                
+            </div>
+          </div>
+          </div>
+      </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+   </body>
+</html>

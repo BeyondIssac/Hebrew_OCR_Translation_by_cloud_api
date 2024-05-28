@@ -1,1 +1,1 @@
-# Hebrew_OCR_Translation_by_cloud_api
+# hebrew_recog
